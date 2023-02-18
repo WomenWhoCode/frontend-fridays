@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>February 17</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Inter"
+    />
+    <style>
+      body {
+        font-family: "Inter";
+        font-style: normal;
+      }
+      .container {
+        position: relative;
+        width: 354px;
+        height: 612px;
+        background: #1e1e1e;
+      }
+      .display {
+        margin-top: 88px;
+        margin-bottom: 22px;
+        margin-inline-end: 21px;
+        margin-inline-start: 25px;
+        border-radius: 10px;
+        width: 308px;
+        height: 70px;
+        background: #e5599c9c;
+        direction: rtl;
+      }
+      .typography-input {
+        font-weight: 700;
+        font-size: 46px;
+        line-height: 56px;
+        color: #ffffff;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 11px;
+      }
+      .key {
+        width: 70px;
+        height: 70px;
+        background: #d9d9d9;
+        border-radius: 20px;
+      }
+      .key-container {
+        margin-inline-end: 20px;
+        margin-inline-start: 21px;
+      }
+      .typography {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 44px;
+        color: #000000;
+      }
+      .clear-button {
+        width: 308px;
+        height: 70px;
+        background: #e6599c;
+        border-radius: 20px;
+        margin-inline-start: 26px;
+        margin-inline-end: 20px;
+        margin-top: 11px;
+        font-weight: 700;
+        font-size: 40px;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <input class="display typography-input" type="text" id="result" />
+      <div class="key-container">
+        <div class="row">
+          <input type="button" value="1" class="key typography" />
+          <input type="button" value="2" class="key typography" />
+          <input type="button" value="3" class="key typography" />
+          <input type="button" value="+" class="key typography" />
+        </div>
+        <div class="row">
+          <input type="button" value="4" class="key typography" />
+          <input type="button" value="5" class="key typography" />
+          <input type="button" value="6" class="key typography" />
+          <input type="button" value="-" class="key typography" />
+        </div>
+        <div class="row">
+          <input type="button" value="7" class="key typography" />
+          <input type="button" value="8" class="key typography" />
+          <input type="button" value="9" class="key typography" />
+          <input type="button" value="X" class="key typography" />
+        </div>
+        <div class="row">
+          <input type="button" value="0" class="key typography" />
+          <input type="button" value="." class="key typography" />
+          <input type="button" value="=" class="key typography" />
+          <input type="button" value="/" class="key typography" />
+        </div>
+      </div>
+      <button class="clear-button" onclick="clr()">Clear</button>
+    </div>
+  </body>
+
+  <script>
+    let result = document.getElementById("result");
+    let firstInput, secondInput, operator;
+
+    let inputList = document.querySelectorAll(".key");
+    inputList.forEach((input) => {
+      //For number 0-9
+      if (Number(input.value) >= 0 && Number(input.value) <= 9) {
+        input.addEventListener("click", (e) => {
+          result.value += input.value;
+        });
+      }
+      //For +, -, X, /
+      let arithmaticOperators = ["+", "-", "X", "/"];
+      if (arithmaticOperators.includes(input.value)) {
+        input.addEventListener("click", (e) => {
+          firstInput = parseFloat(result.value);
+          operator = input.value;
+          result.value = "";
+        });
+      }
+      //For .
+      if (input.value === ".") {
+        input.addEventListener("click", (e) => {
+          result.value += input.value;
+        });
+      }
+      //For =
+      if (input.value === "=") {
+        input.addEventListener("click", (e) => {
+          secondInput = parseFloat(result.value);
+          switch (operator) {
+            case "+":
+              result.value = Math.round(firstInput + secondInput).toFixed(3);
+              break;
+            case "-":
+              result.value = Math.round(firstInput - secondInput).toFixed(3);
+              break;
+            case "X":
+              result.value = Math.round(firstInput * secondInput).toFixed(3);
+              break;
+            case "/":
+              result.value = Math.round(firstInput / secondInput).toFixed(3);
+              break;
+          }
+        });
+      }
+    });
+
+    function clr() {
+      result.value = "";
+    }
+  </script>
+</html>
