@@ -121,6 +121,12 @@ const config = {
       chunks: ['feb-4-poulami-second'],
       filename: 'pages/feb-4-poulami-second.html'
     }),
+    new HtmlWebpackPlugin({
+      template: "pages/feb24-poulami.html",
+      inject: true,
+      chunks: ['feb24-poulami'],
+      filename: 'pages/feb24-poulami.html'
+    }),
     new CopyWebpackPlugin({ //assets only
       patterns: [{
         from: "./assets",

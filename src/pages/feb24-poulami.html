@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>February 24</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Inter"
+    />
+    <style>
+      .container {
+        width: 498px;
+        height: 902px;
+        background: linear-gradient(155.33deg, #de0000 0%, #070fdd 60.1%);
+      }
+      .login-form {
+        width: 498px;
+        height: 1060px;
+        background: #ffffff;
+        border-radius: 203px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .logo {
+        width: 150px;
+        height: 150px;
+        top: 77px;
+        margin-inline-start: 174px;
+        position: relative;
+        z-index: 2;
+      }
+      .content {
+        padding-inline-start: 80px;
+        padding-inline-end: 81px;
+      }
+      .typography {
+        font-family: "Inter";
+        font-style: normal;
+        color: black;
+      }
+      .login-text {
+        margin-top: 130px;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 39px;
+        text-align: center;
+      }
+      .flex-details {
+        display: flex;
+        flex-direction: row;
+      }
+      .user-input-container {
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+        border-radius: 5px;
+        margin-top: 33px;
+      }
+      .user-input {
+        box-sizing: border-box;
+        width: 337px;
+        height: 46px;
+        background: #fcfcfc;
+        border: 1px solid #ffffff;
+      }
+      .reset {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-decoration: underline;
+      }
+      .remember-me {
+        margin-top: 21px;
+        justify-content: space-between;
+      }
+      .remember-me-text {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 0;
+      }
+      .login-button {
+        display: inline-block;
+        margin-top: 30px;
+        background: #000000;
+        border-radius: 5px;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #ffffff;
+        width: 337px;
+        height: 48px;
+      }
+      .social {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        width: 342px;
+        height: 40px;
+        background: #ffffff;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 50px;
+        padding-inline-start: 14px;
+      }
+      .fb {
+        border: 2px solid #0994fa;
+      }
+      .google {
+        border: 2px solid red;
+      }
+      .apple {
+        border: 2px solid #000000;
+      }
+      .social-icon {
+        width: 24px;
+        height: 24px;
+      }
+      .social-text {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+      }
+      .no-account {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        margin-left: 70px;
+      }
+      .signup {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+      }
+      .or {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img src="../assets/bond-street.svg" class="logo" />
+      <div class="login-form">
+        <div class="content">
+          <p class="login-text typography"><b>Login To Continue</b></p>
+          <div class="flex-details user-input-container">
+            <input type="email" class="user-input" />
+            <img src="../assets/mail.svg" style="width: 29px; height: 21px" />
+          </div>
+          <div class="flex-details user-input-container">
+            <input type="password" class="user-input" />
+            <img src="../assets/eye.svg" style="width: 25px; height: 20px" />
+          </div>
+          <p class="typography reset">Reset Password</p>
+          <div class="flex-details remember-me">
+            <p class="typography remember-me-text">Remember Me</p>
+            <img src="../assets/toggle.svg" />
+          </div>
+          <button type="submit" class="login-button typography">LOGIN</button>
+          <p class="typography" style="margin-top: 21px">
+            _____________________
+            <span class="or">OR</span> _____________________
+          </p>
+          <div class="flex-details social fb">
+            <img src="../assets/fb_icon.svg" class="social-icon" />
+            <p class="typography social-text">Continue with Facebook</p>
+          </div>
+          <div class="flex-details social google">
+            <img src="../assets/go_icon.svg" class="social-icon" />
+            <p class="typography social-text">Continue with Google</p>
+          </div>
+          <div class="flex-details social apple">
+            <img src="../assets/apple_icon.svg" class="social-icon" />
+            <p class="typography social-text">Continue with Apple</p>
+          </div>
+          <p class="typography no-account">
+            Don’t have an account?
+            <span class="typography signup"><u>SignUp</u></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script></script>
+</html>
