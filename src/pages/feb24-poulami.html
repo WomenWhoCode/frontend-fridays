@@ -150,15 +150,15 @@
   <body>
     <div class="container">
       <img src="../assets/bond-street.svg" class="logo" />
-      <div class="login-form">
+      <form class="login-form" id="login-form">
         <div class="content">
           <p class="login-text typography"><b>Login To Continue</b></p>
           <div class="flex-details user-input-container">
-            <input type="email" class="user-input" />
+            <input type="email" class="user-input" id="email" />
             <img src="../assets/mail.svg" style="width: 29px; height: 21px" />
           </div>
           <div class="flex-details user-input-container">
-            <input type="password" class="user-input" />
+            <input type="password" class="user-input" id="password" />
             <img src="../assets/eye.svg" style="width: 25px; height: 20px" />
           </div>
           <p class="typography reset">Reset Password</p>
@@ -166,7 +166,9 @@
             <p class="typography remember-me-text">Remember Me</p>
             <img src="../assets/toggle.svg" />
           </div>
-          <button type="submit" class="login-button typography">LOGIN</button>
+          <button type="submit" class="login-button typography">
+            LOGIN
+          </button>
           <p class="typography" style="margin-top: 21px">
             _____________________
             <span class="or">OR</span> _____________________
@@ -188,8 +190,42 @@
             <span class="typography signup"><u>SignUp</u></span>
           </p>
         </div>
-      </div>
+    </form>
     </div>
   </body>
-  <script></script>
+  <script>
+    const credentialList = [
+      {
+        username: "abc@gmail.com",
+        password: "1234",
+      },
+      {
+        username: "test@gmail.com",
+        password: "1235",
+      },
+      {
+        username: "dummy@yahoo.com",
+        password: "password",
+      },
+    ];
+    let loginForm = document.getElementById("login-form");
+
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      const isCredentialMatched = credentialList.find(
+        (cred) => cred.username === email && cred.password === password
+      );
+      if (isCredentialMatched) {
+        alert("Successfully logged in");
+      } else {
+        alert("Invalid credentials");
+      }
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+    });
+  </script>
 </html>
