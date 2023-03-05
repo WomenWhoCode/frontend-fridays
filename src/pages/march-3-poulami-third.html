@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March 3</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Acme&family=Roboto&display=swap");
+    * {
+      box-sizing: border-box;
+    }
+
+    header,
+    section {
+      overflow-x: hidden;
+      background: var(--bggradient);
+    }
+
+    :root {
+      --Roboto: "Roboto", cursive;
+      --bggradient: linear-gradient(90deg, #8db48e 50%, white 50%);
+    }
+
+    header a {
+      font-family: var(--Roboto);
+      font-style: normal;
+      font-size: 0.9em;
+      color: #4d724d !important;
+    }
+    header .navbar img {
+      padding-right: 3em;
+    }
+    header .nav-item {
+      padding: 0.9em;
+    }
+    header .navbar-brand {
+      padding-left: 4rem;
+    }
+    .section-1 {
+      padding: 20vmin, 0;
+      position: relative;
+    }
+    .section-1 .tomato {
+      position: absolute;
+      top: 5em;
+      left: 1em;
+      z-index: 1;
+    }
+    .section-1 .lemon {
+      position: absolute;
+      top: 2em;
+      right: 1em;
+      z-index: 1;
+    }
+    .section-1 .broccoli {
+      position: absolute;
+      bottom: 0.25em;
+      left: 1em;
+      z-index: 1;
+    }
+    .section-1 .tulsi {
+      position: absolute;
+      bottom: 0.25em;
+      right: 1em;
+      z-index: 1;
+    }
+
+    .section-1 .row .col-md-4 > h1 {
+      font-weight: bold;
+      padding: 2em 0 1em 0;
+      font-size: 2em;
+      color: #4d724d;
+    }
+
+    .section-1 .row .col-md-4 > p {
+      font-size: 0.9em;
+      color: #4d724d;
+      width: 100%;
+    }
+    .section-1 .row .first {
+      margin-right: 15em;
+      margin-left: -15em;
+    }
+    .section-1 .row .third {
+      margin-left: 15em;
+      margin-right: -15em;
+    }
+    .section-1 .row .first img,
+    .section-1 .row .third img {
+      width: 80%;
+      padding-top: 4em;
+    }
+    .section-1 .row .fork {
+      width: 40%;
+      margin-left: -4em;
+    }
+    .section-1 .row .knife {
+      width: 50%;
+      padding-top: 4em;
+      margin-left: -6em;
+    }
+    .section-1 .row .plate {
+      width: 80%;
+      padding-top: 4em;
+      margin-left: -1em;
+    }
+    @media only screen and (max-width: 768px) {
+      .section-1 .row .first,
+      .section-1 .row .second,
+      .section-1 .row .third {
+        width: 80%;
+        padding-top: 4em;
+        margin-inline: 2em;
+      }
+
+      .section-1 {
+        position: relative;
+      }
+      .section-1 .tomato {
+        position: absolute;
+        top: -5em;
+        left: -2em;
+        z-index: 1;
+      }
+      .section-1 .lemon {
+        position: absolute;
+        top: -5em;
+        right: -2em;
+        z-index: 1;
+      }
+      .section-1 .broccoli {
+        position: absolute;
+        bottom: -5em;
+        left: -2em;
+        z-index: 1;
+      }
+      .section-1 .tulsi {
+        position: absolute;
+        bottom: -5em;
+        right: -2em;
+        z-index: 1;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg d-flex">
+          <a class="navbar-brand" href="#">
+            <img src="../assets/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="me-auto"></div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+            <img src="../assets/search.svg" alt="" />
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="section-1">
+        <img src="../assets/tomato.svg" alt="" class="img-fluid tomato" />
+        <img src="../assets/lemon.svg" alt="" class="img-fluid lemon" />
+        <img src="../assets/broccoli.svg" alt="" class="img-fluid broccoli" />
+        <img src="../assets/tulsi.svg" alt="" class="img-fluid tulsi" />
+        <div class="container text-left">
+          <div class="row">
+            <div class="col-md-4 col-sm-12 first">
+              <h1>Salmon Salad</h1>
+              <p>
+                This salmon salad makes a main dish salad with chopped
+                vegetables, flaky fish, and tangy citrus dressing. It has plenty
+                of protein and healthy fats, so it’s nutritious and delicious!
+              </p>
+              <img src="../assets/plate.svg" alt="" />
+            </div>
+            <div class="col-md-4 col-sm-12 second">
+              <h1>Salmon Salad</h1>
+              <p>
+                This salmon salad makes a main dish salad with chopped
+                vegetables, flaky fish, and tangy citrus dressing. It has plenty
+                of protein and healthy fats, so it’s nutritious and delicious!
+              </p>
+              <div class="d-flex combo-plate">
+                <img src="../assets/fork.svg" alt="" class="fork" />
+                <img src="../assets/plate.svg" alt="" class="plate" />
+                <img src="../assets/knife.svg" alt="" class="knife" />
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 third">
+              <h1>Salmon Salad</h1>
+              <p>
+                This salmon salad makes a main dish salad with chopped
+                vegetables, flaky fish, and tangy citrus dressing. It has plenty
+                of protein and healthy fats, so it’s nutritious and delicious!
+              </p>
+              <img src="../assets/plate.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
