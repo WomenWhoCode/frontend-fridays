@@ -12,7 +12,7 @@ It's a self-paced event where you will be able to practice, grab a Code Review, 
 
 ## How to participate
 
-1. Join the [Front End Slack Community](https://join.slack.com/t/womenwhocodefrontend/shared_invite/zt-1mqkunz6u-5f8sZQSzh7vO9FzPBCYnHA)
+1. Join the [Front End Slack Community](https://join.slack.com/t/womenwhocodefrontend/shared_invite/zt-1rupusuvb-Bfp08fotgJNdhyUIZPfg3A)
 2. Join the [#frontend-friday](hhttps://womenwhocodefrontend.slack.com/archives/CJJMY6A3C) channel
 3. Follow the UI Coding Challenges  each Friday (Make sure you have notifications enabled. [Here's a guide how to do](https://slack.com/help/articles/201355156-Configure-your-Slack-notifications )
 4. Fork or clone this [repository](https://github.com/WomenWhoCode/frontend-fridays.git) to get the initial exercises's code. You can share yur Github repo or you can do your codepens and share!
