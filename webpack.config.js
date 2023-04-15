@@ -122,10 +122,28 @@ const config = {
       filename: 'pages/feb-4-poulami-second.html'
     }),
     new HtmlWebpackPlugin({
+      testimonial
       template: "pages/feb-10-poulami.html",
       inject: true,
       chunks: ['feb-10-poulami'],
       filename: 'pages/feb-10-poulami.html'
+
+      template: "pages/mar-17-poulami.html",
+      inject: true,
+      chunks: ['mar-17-poulami'],
+      filename: 'pages/mar-17-poulami.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: "pages/mar-24-poulami.html",
+      inject: true,
+      chunks: ['mar-24-poulami'],
+      filename: 'pages/mar-24-poulami.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: "pages/march-31-poulami.html",
+      inject: true,
+      chunks: ['march-31-poulami'],
+      filename: 'pages/march-31-poulami.html'
     }),
     new CopyWebpackPlugin({ //assets only
       patterns: [{

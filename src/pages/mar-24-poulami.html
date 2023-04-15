@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March 17</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 38px 57px 38px 45px;
+        box-sizing: border-box;
+      }
+      :root {
+        --bar-color: #262626;
+        --empty-bar-color: #f0f0f0;
+      }
+      .flex-row-details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .font-inter-700 {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        line-height: 0px;
+      }
+
+      .font-inter-400 {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .header {
+        font-size: 12px;
+      }
+      .training {
+        border: 1px solid rgba(30, 30, 30, 0.2);
+        border-radius: 20px;
+        padding-top: 18px;
+        padding-left: 23px;
+        width: 227px;
+        height: 167px;
+      }
+      .training .header {
+        margin-bottom: 16px;
+      }
+      .flex-row-details .details {
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-row-details .name {
+        font-size: 8px;
+      }
+      .flex-row-details .date {
+        font-size: 6px;
+      }
+      .flex-row-details img {
+        height: 38px;
+        width: 38px;
+        margin-right: 9px;
+      }
+      .divider {
+        width: 198px;
+        height: 0px;
+        border: 1px dashed #6a6a6a;
+        margin-top: 6px;
+        margin-bottom: 5px;
+      }
+
+      .profiles {
+        justify-content: space-between;
+      }
+
+      .user-profile {
+        border: 1px solid rgba(30, 30, 30, 0.2);
+        border-radius: 20px;
+        flex-direction: column;
+        text-align: center;
+        flex-wrap: wrap;
+        width: 104px;
+        height: 106px;
+        margin-top: 46px;
+        padding: 5px;
+        position: relative;
+      }
+
+      .user-profile img {
+        position: absolute;
+        top: -20px;
+        transform: translateX(-50%);
+      }
+
+      .user-profile .header {
+        font-size: 20px;
+        margin-top: 40px;
+      }
+      .user-profile .sub-header {
+        margin-left: 3px;
+        margin-top: 10px;
+      }
+
+      .sub-header {
+        font-size: 8px;
+      }
+      .activity {
+        margin-top: 27px;
+        padding-inline: 18px;
+        border: 1px solid rgba(30, 30, 30, 0.2);
+        border-radius: 20px;
+        width: 226px;
+        height: 106px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .activity .days {
+        line-height: 24.2px;
+      }
+
+      .activity .sub-header {
+        margin-left: 4px;
+      }
+
+      .graph-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .graph {
+        border-radius: 10px;
+        width: 17px;
+        height: 7px;
+        margin-right: 3px;
+      }
+      .graph-green {
+        background-color: #46d90f;
+      }
+      .graph-pink {
+        background-color: #f773e5;
+      }
+      .graph-name {
+        font-size: 6px;
+        margin-right: 3px;
+      }
+      .pie {
+        --w: 90px;
+        display: inline-grid;
+        place-content: center;
+        width: var(--w);
+        aspect-ratio: 1;
+        position: relative;
+        margin: 10px;
+      }
+      .pie-inner {
+        --w: 75px;
+
+        width: var(--w);
+        aspect-ratio: 1;
+        position: relative;
+        display: inline-grid;
+        place-content: center;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: "Inter";
+      }
+      .pie:before,
+      .pie-inner:before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        inset: 0;
+        background: conic-gradient(var(--c) calc(var(--p) * 1%), #d9d9d9 0);
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          #0000 calc(99% - var(--b)),
+          #000 calc(100% - var(--b))
+        );
+        mask: radial-gradient(
+          farthest-side,
+          #0000 calc(99% - var(--b)),
+          #000 calc(100% - var(--b))
+        );
+      }
+
+      .right-container {
+        width: 226px;
+        height: 374px;
+        border: 1px solid rgba(30, 30, 30, 0.2);
+        border-radius: 20px;
+        margin-left: 29px;
+        padding-left: 28px;
+        padding-right: 22px;
+        padding-top: 28px;
+      }
+      .container-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .exercise {
+        background: #d9d9d9;
+        border-radius: 10px;
+        height: 88px;
+        margin-bottom: 27px;
+        padding-top: 13px;
+        padding-inline: 9px;
+      }
+      .metrics {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px 6px;
+      }
+      .metric {
+        background: white;
+        border: 1px solid rgba(153, 153, 153, 0.51);
+        border-radius: 10px;
+        padding: 4px 5px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8px;
+      }
+      .agility {
+        background: #fc8630;
+      }
+      .balance {
+        background: #46d90f;
+      }
+
+      .exercise .name {
+        font-size: 8px;
+      }
+
+      .exercise .details {
+        display: inline-block;
+        background: white;
+        border: 1px solid rgba(153, 153, 153, 0.51);
+        border-radius: 10px;
+        padding: 4px 5px 3px 5px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8px;
+      }
+
+      .exercise .places {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 6px;
+        color: #6a6a6a;
+      }
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+      .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .first {
+        background: #a066ff;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: 68%;
+      }
+      .second {
+        background: #a066ff;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: 75%;
+      }
+      .third {
+        background: #a066ff;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: 83%;
+        display: inline-grid;
+        place-content: center;
+      }
+      .third p {
+        font-size: 8px;
+        color: #fff;
+      }
+      .inner-first {
+        background: #d9d9d9;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: 74.5%;
+        overflow: hidden;
+      }
+      .inner-second {
+        background: #d9d9d9;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: 82.5%;
+        overflow: hidden;
+      }
+
+      @media (max-width: 412px) {
+        .right-container {
+          margin-left: 0px;
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-row-details">
+      <div class="left-container">
+        <div class="training">
+          <p class="header font-inter-700">My training</p>
+          <div class="flex-row-details">
+            <img
+              src="../assets/poulami/wellness-app/running.png"
+              alt="running"
+            />
+            <div class="details">
+              <p class="font-inter-700 name">Running</p>
+              <p class="font-inter-400 date">March 5</p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="flex-row-details">
+            <img
+              src="../assets/poulami/wellness-app/fitness.png"
+              alt="fitness"
+            />
+            <div class="details">
+              <p class="font-inter-700 name">Fitness Basics</p>
+              <p class="font-inter-400 date">March 7</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-row-details profiles">
+          <div class="user-profile">
+            <img
+              src="../assets/poulami/wellness-app/profile.png"
+              alt="profile"
+            />
+            <p class="font-inter-700 header">Mariya</p>
+            <p class="font-inter-400 sub-header">Your daily workout app</p>
+          </div>
+          <div class="user-profile">
+            <img src="../assets/poulami/wellness-app/fire.png" alt="fire" />
+            <p class="font-inter-700 header">380</p>
+            <p class="font-inter-400 sub-header">Calories left</p>
+          </div>
+        </div>
+        <div class="activity">
+          <div class="left">
+            <p class="header font-inter-700">Your Activity</p>
+            <p class="header font-inter-700 days">
+              30<span class="font-inter-400 sub-header">Days</span>
+            </p>
+            <div class="graph-details">
+              <div class="graph graph-green"></div>
+              <p class="font-inter-700 graph-name">Cardio</p>
+              <div class="graph graph-pink"></div>
+              <p class="font-inter-700 graph-name">Workout</p>
+            </div>
+          </div>
+          <div class="right">
+            <div class="pie" style="--p: 35; --b: 5px; --c: #46d90f">
+              <div class="pie-inner" style="--p: 35; --b: 5px; --c: #f673e5">
+                80%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="container-header">
+          <p class="header font-inter-700">Offline trainings</p>
+          <p class="sub-header">See more</p>
+        </div>
+        <div class="exercise">
+          <p class="name">Pilates</p>
+          <p class="details">Flexibility</p>
+          <div class="bottom">
+            <p class="places">10 places</p>
+            <div class="logo">
+              <div class="first"></div>
+              <div class="inner-first"></div>
+              <div class="second"></div>
+              <div class="inner-second"></div>
+              <div class="third">
+                <p class="font-inter-700">+3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <p class="font-inter-700 name">Barre</p>
+          <p class="details">Power</p>
+          <div class="bottom">
+            <p class="places">5 places</p>
+            <div class="logo">
+              <div class="first"></div>
+              <div class="inner-first"></div>
+              <div class="second"></div>
+              <div class="inner-second"></div>
+              <div class="third">
+                <p class="font-inter-700">+3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric agility">Agility</div>
+          <div class="metric">Flexibility</div>
+          <div class="metric balance">Balance</div>
+          <div class="metric">Power</div>
+          <div class="metric">Cross Training</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March 31</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .container {
+      width: 50%;
+    }
+    .flex-details-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .flex-details-column {
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #dcc2f7;
+      margin-bottom: 30px;
+    }
+    .header-img {
+      height: 300px;
+      width: 300px;
+      margin: -60px;
+    }
+    .header-text {
+      width: 50%;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .header-text i {
+      color: blueviolet;
+      font-size: smaller;
+      margin-top: 5px;
+    }
+    .section {
+      background-color: rgb(180, 238, 180);
+      margin-bottom: 30px;
+      padding-block: 20px;
+      padding-left: 5px;
+      height: 270px;
+    }
+    .bamboo-img {
+      height: 350px;
+      width: 300px;
+      margin-inline: -60px;
+      margin-block: -70px;
+    }
+    .mental-breaks {
+      margin-bottom: 35px;
+      font-weight: 400;
+    }
+    .star-img {
+      height: 200px;
+      width: 200px;
+      margin: -30px;
+    }
+    .self-care {
+      background-color: lightblue;
+      padding: 15px;
+      flex-grow: 3;
+    }
+    .self-care h3 {
+      font-size: medium;
+    }
+    .self-care p {
+      margin-right: 15px;
+    }
+    .wip-img {
+      height: 165px;
+      width: 165px;
+      margin-inline: -30px;
+      margin-top: -60px;
+    }
+    .self-care-body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .stay-positive {
+      background-color: #dcc2f7;
+      padding: 10px;
+      margin-left: 15px;
+      flex-grow: 1;
+    }
+    .love-img {
+      margin-top: -80px;
+      margin-inline: -40px;
+      margin-bottom: -60px;
+    }
+    .stay-positive h3 {
+      margin-bottom: 5px;
+      font-size: medium;
+    }
+    .stay-positive img {
+      height: 150px;
+      width: 150px;
+    }
+    .stay-positive ul li {
+      font-size: small;
+    }
+    @media (max-width: 414px) {
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+      .stay-positive {
+        margin-top: 15px;
+      }
+      .stay-positive ul {
+        margin-top: 30px;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="../assets/poulami/wwc/happy-face.png"
+          alt="Happy Face"
+          class="header-img"
+        />
+        <div class="header-text flex-details-column">
+          <h2>Women Who Code News</h2>
+          <i>The most extroverted news you’ll find.</i>
+        </div>
+      </div>
+      <div class="section flex-details-row">
+        <img
+          src="../assets/poulami/wwc/bamboo.png"
+          alt="Bamboo"
+          class="bamboo-img"
+        />
+        <div class="flex-details-column">
+          <h2 class="mental-breaks">Benefits of Mental Breaks</h2>
+          <div class="flex-details-row">
+            <ul>
+              <li>Reduce Stress</li>
+              <li>Enhance Mood</li>
+              <li>Restore Motivation</li>
+            </ul>
+            <img
+              src="../assets/poulami/wwc/stars.png"
+              alt=""
+              class="star-img"
+            />
+          </div>
+        </div>
+      </div>
+      <footer class="flex-details-row">
+        <div class="self-care">
+          <h3><b>Self-care Tip!</b></h3>
+          <div class="flex-details-row">
+            <p>It is okay to say no</p>
+            <img src="../assets/poulami/wwc/wip.png" class="wip-img" />
+          </div>
+        </div>
+        <div class="stay-positive">
+          <div class="flex-details-row">
+            <h3><b>How to stay positive at work</b></h3>
+            <img src="../assets/poulami/wwc/love.png" alt="" class="love-img" />
+          </div>
+          <ul>
+            <li>Go on a walk</li>
+            <li>Remember that challenging times will pass</li>
+            <li>Listen carefully</li>
+            <li>Identify points of agreement and disagreement,</li>
+            <li>Create a culture of positivity</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

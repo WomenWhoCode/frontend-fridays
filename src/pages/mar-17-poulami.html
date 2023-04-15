@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>March 17</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,300,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 5px;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bar-color: #262626;
+        --empty-bar-color: #f0f0f0;
+      }
+      .row-flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      .font-clash-500 {
+        font-family: "Clash Display";
+        font-weight: 500;
+      }
+      .header {
+        align-items: center;
+      }
+      .icon {
+        padding-left: 5px;
+      }
+      .options {
+        display: inline-block;
+        background: #f5f5f5;
+        border-radius: 8px;
+      }
+      .details {
+        margin-top: 40px;
+        align-items: start;
+      }
+      .details .first {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+      }
+      .description {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+        color: #8c8c8c;
+        margin-bottom: 40px;
+      }
+      .details h5 {
+        font-family: "Clash Display";
+        font-weight: 700;
+        font-size: 16px;
+        color: #262626;
+      }
+
+      .details .title {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 14px;
+        color: #8c8c8c;
+        letter-spacing: 2px;
+      }
+      .details p {
+        font-size: 20px;
+        color: #262626;
+      }
+      .oldPrice {
+        font-size: 14px;
+        color: #8c8c8c;
+      }
+      .rating {
+        display: flex;
+        flex-direction: row;
+      }
+      .rating-number {
+        background: #f5f5f5;
+        border-radius: 12px;
+        padding: 30px 20px;
+        width: 40%;
+      }
+      .rating-number span {
+        font-size: 32px;
+      }
+      .based {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 14px;
+        color: #8c8c8c;
+      }
+      .rating-number p {
+        font-size: 16px;
+      }
+      .star {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .bar {
+        height: 2px;
+        border-radius: 15px;
+        width: 100px;
+      }
+      .bar1 {
+        background: linear-gradient(
+          to right,
+          var(--bar-color) 50%,
+          var(--empty-bar-color) 50%
+        );
+      }
+      .bar2 {
+        background: linear-gradient(
+          to right,
+          var(--bar-color) 60%,
+          var(--empty-bar-color) 40%
+        );
+      }
+      .bar3 {
+        background: linear-gradient(
+          to right,
+          var(--bar-color) 40%,
+          var(--empty-bar-color) 60%
+        );
+      }
+      .bar4 {
+        background: linear-gradient(
+          to right,
+          var(--bar-color) 30%,
+          var(--empty-bar-color) 70%
+        );
+      }
+      .bar5 {
+        background: linear-gradient(
+          to right,
+          var(--bar-color) 70%,
+          var(--empty-bar-color) 30%
+        );
+      }
+      .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 65px;
+      }
+      .price p {
+        font-size: 20px;
+      }
+      .price button {
+        background: #11737a;
+        border-radius: 36px;
+        width: 70%;
+        height: 48px;
+        font-family: "Poppins";
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header row-flex">
+      <i class="fa-solid fa-arrow-left"></i>
+      <div>
+        <i class="fa-solid fa-share-nodes icon"></i>
+        <i class="fa-regular fa-heart icon"></i>
+      </div>
+    </header>
+    <section>
+      <img src="../assets/poulami/e-commerce/chair_thumbnail.png" alt="thumbnail" />
+      <div class="options">
+        <img src="../assets/poulami/e-commerce/chair-1.png" alt="chair-1" />
+        <img src="../assets/poulami/e-commerce/chair-2.png" alt="chair-2" />
+        <img src="../assets/poulami/e-commerce/chair-3.png" alt="chair-3" />
+      </div>
+      <div class="details row-flex">
+        <div class="first">
+          <p class="title font-clash-500">VEDBO</p class="title">
+          <h5>Armchair, Gunnared light green</h5>
+        </div>
+        <p class="font-clash-500"><strike class="oldPrice font-clash-500">45$</strike> 35$</p>
+      </div>
+      <p class="description">
+        comfortable and stylish seating option with a modern design, perfect for
+        any contemporary living space.
+      </p>
+      <div class="rating">
+        <div class="rating-number">
+          <p class="font-clash-500"><span class="font-clash-500">4.6</span>/5</p>
+          <h2 class="based">Based on 136 Reviews</h2>
+        </div>
+        <div>
+          <div class="star">
+            <span class="based">5 Star</span>
+            <div class="bar bar1"></div>
+          </div>
+          <div class="star">
+            <span class="based">4 Star</span>
+            <div class="bar bar2"></div>
+          </div>
+          <div class="star">
+            <span class="based">3 Star</span>
+            <div class="bar bar3"></div>
+          </div>
+          <div class="star">
+            <span class="based">2 Star</span>
+            <div class="bar bar4"></div>
+          </div>
+          <div class="star">
+            <span class="based">1 Star</span>
+            <div class="bar bar5"></div>
+          </div>
+        </div>
+      </div>
+      <div class="price">
+        <p class="font-clash-500">$35.00</p>
+        <button>
+          Add to bag
+          <span>
+            <i class="fa-sharp fa-solid fa-briefcase"></i>
+          </span>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
