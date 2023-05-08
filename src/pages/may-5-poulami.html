@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>May 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-evenly;
+      background: #ebcbff;
+      align-items: center;
+    }
+    .carousel {
+      max-width: 300px;
+      position: relative;
+      padding: 1rem;
+    }
+
+    .carousel .carousel-item,
+    .carousel .carousel-item-hidden {
+      display: none; /* hide all slide images not currently being viewed */
+    }
+
+    .carousel .carousel-item-visible {
+      display: block; /* show current slide image */
+      animation: fadeVisibility 0.5s; /* for fading effect when switching between slides */
+      margin-inline: 3rem;
+      width: 75%;
+    }
+
+    .slide {
+      width: 100%;
+      max-width: 265px;
+      height: auto;
+      background: #ffffff;
+      border: 1px solid #d9d9d9;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    /* Navigation control styles */
+    .carousel .carousel-actions {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      position: absolute;
+      top: 25%;
+    }
+
+    .carousel .carousel-actions button {
+      border-radius: 50px;
+      background-color: white;
+      border: 0;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel .carousel-actions button#carousel-button-prev {
+      background: #b80fbb;
+      background-image: url("../assets/poulami/carousel/left.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .carousel .carousel-actions button#carousel-button-next {
+      background: #b80fbb;
+      background-image: url("../assets/poulami/carousel/right.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .carousel-dots {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .dot {
+      opacity: 0.7; /* gray out dots for slides not being visted */
+    }
+
+    .selected-dot {
+      accent-color: #b80fbb;
+    }
+
+    /* handle smooth transitions between slides */
+    @keyframes fadeVisibility {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .slide-img {
+      height: 56px;
+      width: 67px;
+      background: #d9d9d9;
+      border-radius: 10px;
+      margin: 5%;
+    }
+    .slide-header {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      color: #b80fbb;
+    }
+    .slide-content {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+    }
+  </style>
+  <body>
+    <div class="carousel">
+      <div class="carousel-item carousel-item-visible">
+        <div class="slide">
+          <div class="slide-img"></div>
+          <div>
+            <p class="slide-header">Search form</p>
+            <p class="slide-content">Search from content and more</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="slide">
+          <div class="slide-img"></div>
+          <div>
+            <p class="slide-header">Inside app</p>
+            <p class="slide-content">Explore our career opportunities!</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="slide">
+          <div class="slide-img"></div>
+          <div>
+            <p class="slide-header">Search form</p>
+            <p class="slide-content">Search from content and more</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-actions">
+        <button id="carousel-button-prev" aria-label="Previous"></button>
+        <button id="carousel-button-next" aria-label="Next"></button>
+      </div>
+      <div class="carousel-dots">
+        <input class="dot selected-dot" type="radio" name="dot" checked />
+        <input class="dot" type="radio" name="dot" />
+        <input class="dot" type="radio" name="dot" />
+      </div>
+    </div>
+  </body>
+  <script>
+    const slides = document.getElementsByClassName("carousel-item");
+    const nextButton = document.getElementById("carousel-button-next");
+    const prevButton = document.getElementById("carousel-button-prev");
+    const dots = document.getElementsByClassName("dot");
+    let position = 0;
+    const numberOfSlides = slides.length;
+
+    function hideAllSlides() {
+      // remove all slides not currently being viewed
+      for (const slide of slides) {
+        slide.classList.remove("carousel-item-visible");
+        slide.classList.add("carousel-item-hidden");
+      }
+    }
+
+    const handleMoveToNextSlide = function (e) {
+      hideAllSlides();
+
+      if (position === numberOfSlides - 1) {
+        position = 0; // go back to first slide
+      } else {
+        // move to next slide
+        position++;
+      }
+
+      slides[position].classList.add("carousel-item-visible");
+
+      dots[position].classList.add("selected-dot");
+      dots[position].checked = true;
+    };
+
+    const handleMoveToPrevSlide = function (e) {
+      hideAllSlides();
+
+      // check if we're on the first slide
+      if (position === 0) {
+        position = numberOfSlides - 1; // move to the last slide
+      } else {
+        // move back one
+        position--;
+      }
+      // make current slide visible
+      slides[position].classList.add("carousel-item-visible");
+
+      // update dot to represent current slide
+      dots[position].classList.add("selected-dot");
+      dots[position].checked = true;
+    };
+
+    nextButton.addEventListener("click", handleMoveToNextSlide);
+    prevButton.addEventListener("click", handleMoveToPrevSlide);
+  </script>
+</html>
