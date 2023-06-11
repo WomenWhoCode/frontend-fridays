@@ -202,6 +202,12 @@ const config = {
       chunks: ['may-mariya'],
       filename: 'pages/my_coding_partner.html'
     }),
+    new HtmlWebpackPlugin({
+      template: "pages/june_challenge.html",
+      inject: true,
+      chunks: ['june-mariya'],
+      filename: 'pages/june_challenge.html'
+    }),
     new CopyWebpackPlugin({ //assets only
       patterns: [{
         from: "./assets",
