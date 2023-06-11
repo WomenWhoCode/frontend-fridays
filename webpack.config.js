@@ -207,6 +207,16 @@ const config = {
       inject: true,
       chunks: ['june-mariya'],
       filename: 'pages/june_challenge.html'
+      template: "pages/may-19-poulami-add-todo.html",
+      inject: true,
+      chunks: ['may-19-poulami-add-todo'],
+      filename: 'pages/may-19-poulami-add-todo.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: "pages/may-19-poulami-todo-list.html",
+      inject: true,
+      chunks: ['may-19-poulami-todo-list'],
+      filename: 'pages/may-19-poulami-todo-list.html'
     }),
     new CopyWebpackPlugin({ //assets only
       patterns: [{

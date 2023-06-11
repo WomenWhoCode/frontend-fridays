@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Todo List</title>
+  </head>
+  <style>
+    .container {
+      background: #bb27a7;
+      border: 0.25em solid rgba(30, 30, 30, 0.2);
+      border-radius: 4em;
+      width: 25vw;
+      padding-inline: 3em;
+    }
+    .header {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.5em;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    .task {
+      background: #ffffff;
+      border-top: 0em solid rgba(114, 113, 113, 0.4);
+      padding-inline: 1em;
+      padding-block: 0.75em;
+
+    }
+    .taskName {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1em;
+      color: #bb27a7;
+    }
+    .dueDate {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.75em;
+      color: #1e1e1e;
+      line-height: 0px;
+    }
+    .date {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1em;
+      color: #bb27a7;
+      margin-left: 1em;
+      margin-top: 0em;
+    }
+    .view-more {
+      background: #d9d9d9;
+      padding-inline: 1em;
+    }
+    .more-text {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.75em;
+      color: #bb27a7;
+      margin-block-start: 0em !important;
+    }
+    .add {
+      background: #4fffdf;
+      border: 0.1em dashed #000000;
+      border-radius: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1em;
+      color: #000000;
+      margin-left: 22vw;
+      margin-bottom: 1em;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <p class="header">My TodoList App</p>
+      <div class="task-list"></div>
+      <div class="add">
+        <a href="may-19-poulami-add-todo.html" style="text-decoration: none">
+          +
+        </a>
+      </div>
+    </div>
+    <script>
+      let cardListContainer = document.querySelector(".task-list");
+      let taskLists = JSON.parse(localStorage.getItem("task"));
+      window.addEventListener("DOMContentLoaded", () => {
+        for (let task of taskLists) {
+          const taskCard = `
+                <div class="task">
+                <p class="taskName">${task.task}</p>
+                <p class="dueDate">Due Date <span class="date">${task.dueDate}</span></p>
+                </div>
+                <p class="view-more more-text">+ View more details</p>
+        `;
+          cardListContainer.innerHTML += taskCard;
+        }
+      });
+    </script>
+  </body>
+</html>

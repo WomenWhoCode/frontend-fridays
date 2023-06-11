@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Todo Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .container {
+      width: 20vw;
+      background: #ffffff;
+      border: 0.2em solid rgba(30, 30, 30, 0.2);
+      border-radius: 4em;
+      padding-inline: 2em;
+      padding-top: 1em;
+      text-align: center;
+    }
+    .header {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.5em;
+    }
+    .label {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 0.75em;
+      color: #1e1e1e;
+      text-align: left;
+    }
+    .input-container {
+      background: #bb27a7;
+      text-align: left;
+      width: 100%;
+      height: 3em;
+      color: #ffffff;
+      font-size: 1em;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+    }
+    .desc {
+      height: 6em;
+    }
+    .submit {
+      background: #4fffdf;
+      border: 0.24em dashed #1e1e1e;
+      border-radius: 1em;
+      margin-top: 3em;
+      margin-bottom: 3em;
+      display: inline-block;
+      width: 15em;
+      height: 2em;
+    }
+    .month {
+      background: #bb27a7;
+      width: 30%;
+      height: 2em;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1em;
+      color: #ffffff;
+      padding: 0.5em;
+    }
+  </style>
+  <body>
+    <form class="container" id="taskForm">
+      <p class="header">Add a new task</p>
+      <p for="taskName" class="label">Task name</p>
+      <input type="text" id="taskName" class="input-container" required />
+      <p for="dueDate" class="label">Due date</p>
+      <div style="text-align: left">
+        <select id="month" class="month">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select id="year" class="month">
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+          <option value="2031">2031</option>
+        </select>
+      </div>
+      <p for="description" class="label">Description</p>
+      <textarea
+        name=""
+        id="description"
+        rows="5"
+        class="input-container desc"
+      ></textarea>
+      <input id="add" type="submit" class="submit" value="Add Task" />
+    </form>
+  </body>
+  <script>
+    let form = document.getElementById("taskForm");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let monthIndex = form.month.selectedIndex;
+      let month = form.month.options[monthIndex].value;
+      let yearIndex = form.year.selectedIndex;
+      let year = form.year.options[yearIndex].value;
+
+      let taskName = document.getElementById("taskName").value;
+      let description = document.getElementById("description").value;
+
+      const task = {
+        task: taskName,
+        desc: description,
+        dueDate: `${month}/${year.substring(2)}`,
+      };
+
+      let taskLists = JSON.parse(localStorage.getItem("task")) ?? [];
+      taskLists.push(task);
+      const json = JSON.stringify(taskLists);
+
+      localStorage.setItem("task", json);
+
+      window.location.href = "may-19-poulami-todo-list.html";
+    });
+  </script>
+</html>
