@@ -203,6 +203,10 @@ const config = {
       filename: 'pages/my_coding_partner.html'
     }),
     new HtmlWebpackPlugin({
+      template: "pages/june_challenge.html",
+      inject: true,
+      chunks: ['june-mariya'],
+      filename: 'pages/june_challenge.html'
       template: "pages/may-19-poulami-add-todo.html",
       inject: true,
       chunks: ['may-19-poulami-add-todo'],
